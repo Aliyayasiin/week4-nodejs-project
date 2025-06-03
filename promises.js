@@ -1,9 +1,23 @@
-const checkNumber = (num) => {
-return new Promise((resolve, reject) => {
-if (num > 0) resolve("Positive number");
-else reject("Not a positive number"); });
-};
+function promiseExample() {
+console.log("\nRunning Promise Example:");
 
-checkNumber(10)
-.then((msg) => console.log(msg))
-.catch((err) => console.log(err));
+const producingCode = new Promise((resolve, reject) => {
+let isSuccessful = true;
+
+if (isSuccessful) {
+resolve("Success! The promise was resolved.");
+} else {
+reject("Error! The promise was rejected.");
+}
+});
+
+producingCode
+.then((result) => {
+console.log("Promise result:", result);
+})
+.catch((error) => {
+console.log("Promise error:", error);
+});
+}
+
+module.exports = promiseExample;
